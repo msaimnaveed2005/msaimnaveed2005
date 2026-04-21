@@ -48,7 +48,7 @@ Passionate developer with expertise in **C++**, **JavaScript*, and **React**. I 
 
 ## 📈 Contribution Graph
 
-[![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=msaimnaveed2005&bg_color=0d1117&color=58a6ff&line=30363d&point=58a6ff&area=true&hide_border=true)](https://github.com/msaimnaveed2005)
+[![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=msaimnaveed2005&bg_color=0d1117&color=58a6ff&line=30363d&point=58a6ff&area=true&hide_border=true)] (https://github.com/msaimnaveed2005)
 
 ---
 
