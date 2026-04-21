@@ -11,6 +11,3 @@ This project is created to demonstrate my abilities in coding and problem-solvin
 ## Skills
 - Programming
 - Web Development
-
-## Acknowledgements
-Thanks to everyone who has contributed to this project!
