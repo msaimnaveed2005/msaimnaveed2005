@@ -2,7 +2,7 @@
 
 # 👨‍💻 Muhammad Saim Naveed
 
-### Full Stack Developer | Problem Solver | Open Source Enthusiast
+### Front End Developer | Problem Solver | Open Source Enthusiast
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammad-saim-naveed-53619a375)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/msaimnaveed2005)
@@ -46,10 +46,10 @@ Web Development   ██████████████████░ 85%
 Problem Solving   █████████████████░░ 88%
 ```
 
-- **Languages**: Python, JavaScript, TypeScript, Java
-- **Frontend**: React, HTML5, CSS3, Tailwind CSS
-- **Backend**: Node.js, Express, Django
-- **Tools**: Git, GitHub, VSCode, Docker
+- **Languages**: C++, JavaScript, Java
+- **Frontend**: React, HTML5, CSS
+- **Backend**: Under Development
+- **Tools**: Git, GitHub, VSCode
 
 ---
 
@@ -59,7 +59,7 @@ Problem Solving   █████████████████░░ 88%
 
 **Let's connect and collaborate!**
 
-[📧 Email](mailto:your.email@example.com) • [💼 LinkedIn](https://www.linkedin.com/in/muhammad-saim-naveed-53619a375) • [🐙 GitHub](https://github.com/msaimnaveed2005)
+[📧 Email](mailto:msaimnaveed2005@gmail.com) • [💼 LinkedIn](https://www.linkedin.com/in/muhammad-saim-naveed-53619a375) • [🐙 GitHub](https://github.com/msaimnaveed2005)
 
 </div>
 
