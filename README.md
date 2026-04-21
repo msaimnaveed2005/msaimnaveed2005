@@ -11,7 +11,6 @@ This project is created to demonstrate my abilities in coding and problem-solvin
 ## Skills
 - Programming
 - Web Development
-- Machine Learning
 
 ## Acknowledgements
 Thanks to everyone who has contributed to this project!
