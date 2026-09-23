@@ -373,12 +373,12 @@ def draw_heading(word):
 
 
 def draw_year(s):
-    """Seven rows by fifty-three weeks, intensity as a character."""
-    FS, LH, COLW = 9.2, 11.0, 2
+    """Seven rows by fifty-three weeks, rendered as a compact heatmap."""
+    FS, LH = 9.2, 11.0
+    CELL_W, CELL_H, CELL_GAP = 8, 8, 3
     CW = FS * 0.6
     pad_l, pad_t = LEFT, 44
     weeks = s["weeks"]
-    ncols = len(weeks) * COLW
     H = int(pad_t + 7 * LH + 26)
 
     def level(v):
@@ -412,30 +412,14 @@ def draw_year(s):
             day = next((d for d in w if d.get("weekday") == r), None)
             v = day["contributionCount"] if day else 0
             cells.append(level(v))
-        line = "".join(RAMP[v] * COLW for v in cells).rstrip()
-        if not line:
-            continue
         y = pad_t + r * LH
-        w_px = max(len(line), 1) * CW
-        cid = f"ry{r}"
         delay = 0.30 + r * 0.07
-        p.append(f'<clipPath id="{cid}"><rect x="{pad_l}" y="{y}" '
-                 f'height="{LH}" width="0"><animate attributeName="width" '
-                 f'from="0" to="{w_px:.1f}" begin="{delay:.2f}s" dur="0.40s" '
-                 f'fill="freeze"/></rect></clipPath>')
-        spans = []
-        start = 0
-        while start < len(cells):
-            value = cells[start]
-            end = start + 1
-            while end < len(cells) and cells[end] == value:
-                end += 1
-            text = (RAMP[value] * COLW * (end - start)).replace("&", "&amp;")
-            spans.append(f'<tspan class="v{value}">{text}</tspan>')
-            start = end
-        p.append(f'<g clip-path="url(#{cid})"><text xml:space="preserve" '
-                 f'x="{pad_l}" y="{y + FS - 0.6:.1f}" class="d-f" '
-                 f'font-size="{FS}">{"".join(spans)}</text></g>')
+        p.append(f'<g opacity="0">{fade(delay)}')
+        for col, value in enumerate(cells):
+            x = pad_l + col * (CELL_W + CELL_GAP)
+            p.append(f'<rect x="{x}" y="{y}" width="{CELL_W}" '
+                    f'height="{CELL_H}" rx="2" class="v{value}"/>')
+        p.append("</g>")
 
     for r, lab in ((1, "mon"), (3, "wed"), (5, "fri")):
         p.append(label(pad_l - 7, pad_t + r * LH + FS - 0.6, lab, 9, "m-f",
@@ -445,7 +429,7 @@ def draw_year(s):
     base_y = pad_t + 7 * LH + 13
     for i, w in enumerate(weeks):
         m = int(w[0]["date"][5:7])
-        x = pad_l + i * COLW * CW
+        x = pad_l + i * (CELL_W + CELL_GAP)
         if m != last_m and i < len(weeks) - 1 and x - last_x >= 34:
             p.append(label(x, base_y, MON[m - 1], 9, "m-f"))
             last_x = x
