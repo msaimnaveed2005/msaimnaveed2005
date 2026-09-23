@@ -15,7 +15,10 @@ HEIGHT = len(lines) * LINE_H + PAD * 2
 font_b64 = base64.b64encode(font_path.read_bytes()).decode("ascii")
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" font-family="JBMono,ui-monospace,monospace">
-<style>@font-face{{font-family:JBMono;font-style:normal;font-weight:400;font-display:block;src:url(data:font/woff2;base64,{font_b64}) format("woff2")}}.a{{fill:#6e7681}}@media(prefers-color-scheme:dark){{.a{{fill:#c9d1d9}}}}</style>'''
+<style>@font-face{{font-family:JBMono;font-style:normal;font-weight:400;font-display:block;src:url(data:font/woff2;base64,{font_b64}) format("woff2")}}.a{{fill:#f0f6fc}}</style>
+<defs><clipPath id="card"><rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" rx="22" ry="22"/></clipPath></defs>
+<rect width="{WIDTH}" height="{HEIGHT}" rx="22" ry="22" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+<g clip-path="url(#card)">'''
 
 for index, line in enumerate(lines):
     y = PAD + index * LINE_H
@@ -26,6 +29,6 @@ for index, line in enumerate(lines):
     clip_id = f"row{index}"
     svg += f'''<clipPath id="{clip_id}"><rect x="{PAD}" y="{y}" width="0" height="{LINE_H}"><animate attributeName="width" from="0" to="{line_width:.1f}" begin="{begin:.2f}s" dur="0.09s" fill="freeze"/></rect></clipPath><g clip-path="url(#{clip_id})"><text xml:space="preserve" x="{PAD}" y="{y + 11.2:.1f}" class="a" font-size="{FONT_SIZE}">{safe}</text></g><rect y="{y + 1}" width="6" height="12" class="a" opacity="0"><animate attributeName="x" from="{PAD}" to="{PAD + line_width:.1f}" begin="{begin:.2f}s" dur="0.09s" fill="freeze"/><set attributeName="opacity" to="0.8" begin="{begin:.2f}s"/><set attributeName="opacity" to="0" begin="{end:.2f}s"/></rect>'''
 
-svg += "</svg>\n"
+svg += "</g></svg>\n"
 (output_dir / "ascii.svg").write_text(svg, encoding="utf-8")
 print(f"SVG created at {output_dir / 'ascii.svg'}")
