@@ -36,11 +36,25 @@ Practicing data structures and algorithms to build stronger engineering fundamen
 - Learning machine learning through hands-on experiments
 - Building a portfolio of useful, well-documented projects
 
+<img src="./output/hd-stats.svg" width="620" alt="stats" />
+
+<div align="center">
+
+<img src="./output/streak.svg" width="620" alt="Current and longest contribution streak" />
+
+<img src="./output/langs.svg" width="620" alt="Top languages by bytes and repository count" />
+
+<img src="./output/year.svg" width="620" alt="Contribution activity over the last year" />
+
+</div>
+
 <img src="./output/hd-about-this-page.svg" width="620" alt="about this page" />
 
 The portrait and profile graphics are generated inside this repository. A scheduled
 GitHub Action refreshes the contribution graphics using GitHub's GraphQL API and
 commits only changed files, so the profile does not depend on third-party widgets.
+The stats include contribution history, streaks, public-repository languages, and
+a one-character-per-day activity map.
 
 <div align="center">
 <sub>Learning, building, and improving one project at a time.</sub>
