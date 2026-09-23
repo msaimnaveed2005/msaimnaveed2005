@@ -1,61 +1,51 @@
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageEnhance, ImageOps
 
-ASCII_CHARS = " .`:-=+*cs#%@"
-ASCII_WIDTH = 90
+import cv2
+import numpy as np
+from PIL import Image
+from rembg import remove
 
-
-def crop_to_subject(img):
-    width, height = img.size
-    margin = int(width * 0.16)
-    return img.crop((margin, 0, width - margin, height))
-
-
-def remove_flat_background(img):
-    cleaned = img.copy()
-    ImageDraw.floodfill(cleaned, (0, 0), (255, 255, 255), thresh=42)
-    return cleaned
+RAMP = " .`:-=+*cs#%@"
+COLS = 90
+ROW_RATIO = 0.48
+CURVE = 1.7
 
 
-def resize(img, width=ASCII_WIDTH):
-    w, h = img.size
-    ratio = h / w
-    height = max(1, int(width * ratio * 0.55))
-    return img.resize((width, height), Image.Resampling.LANCZOS)
+def prepare(path):
+    source = Image.open(path).convert("RGBA")
+    cutout = remove(source)
+    alpha = np.array(cutout.getchannel("A"))
+
+    white = Image.new("RGBA", cutout.size, (255, 255, 255, 255))
+    gray = np.array(Image.alpha_composite(white, cutout).convert("L"))
+    gray = cv2.bilateralFilter(gray, 11, 50, 50)
+    gray = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8, 8)).apply(gray)
+    gray = (255.0 * (gray / 255.0) ** CURVE).astype("uint8")
+    gray[alpha < 20] = 255
+    return Image.fromarray(gray)
 
 
-def grayscale(img):
-    return img.convert("L")
-
-
-def pixels_to_ascii(img):
-    pixels = img.getdata()
-    chars = "".join(
-        ASCII_CHARS[pixel * len(ASCII_CHARS) // 256]
-        for pixel in pixels
-    )
-    return chars
+def to_ascii(image):
+    width, height = image.size
+    rows = max(1, int(COLS * (height / width) * ROW_RATIO))
+    image = image.resize((COLS, rows), Image.Resampling.LANCZOS)
+    pixels = list(image.getdata())
+    result = []
+    for row in range(rows):
+        result.append("".join(
+            RAMP[min(len(RAMP) - 1,
+                     int((1 - pixels[row * COLS + col] / 255.0) * len(RAMP)))]
+            for col in range(COLS)
+        ).rstrip())
+    while result and not result[0].strip():
+        result.pop(0)
+    while result and not result[-1].strip():
+        result.pop()
+    return result
 
 
 output_dir = Path("output")
 output_dir.mkdir(exist_ok=True)
-
-image = Image.open("profile.png").convert("RGB")
-image = crop_to_subject(image)
-image = remove_flat_background(image)
-image = grayscale(resize(image))
-image = ImageOps.autocontrast(image, cutoff=2)
-image = ImageEnhance.Contrast(image).enhance(1.35)
-image = image.point(lambda value: int(255 * (value / 255) ** 1.35))
-
-ascii_str = pixels_to_ascii(image)
-width = image.width
-ascii_img = "\n".join(
-    ascii_str[i:i + width].rstrip()
-    for i in range(0, len(ascii_str), width)
-)
-
-with open(output_dir / "ascii.txt", "w", encoding="utf-8") as f:
-    f.write(ascii_img)
-
-print(f"ASCII generated at {output_dir / 'ascii.txt'}")
+lines = to_ascii(prepare("profile.png"))
+(output_dir / "ascii.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
+print(f"ASCII generated at {output_dir / 'ascii.txt'}: {len(lines)} rows")
