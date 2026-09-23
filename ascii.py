@@ -1,14 +1,20 @@
 from pathlib import Path
-from PIL import Image, ImageEnhance, ImageOps
+from PIL import Image, ImageDraw, ImageEnhance, ImageOps
 
-ASCII_CHARS = "@%#*+=-:.` "
+ASCII_CHARS = " .`:-=+*cs#%@"
 ASCII_WIDTH = 90
 
 
 def crop_to_subject(img):
     width, height = img.size
-    margin = int(width * 0.08)
+    margin = int(width * 0.16)
     return img.crop((margin, 0, width - margin, height))
+
+
+def remove_flat_background(img):
+    cleaned = img.copy()
+    ImageDraw.floodfill(cleaned, (0, 0), (255, 255, 255), thresh=42)
+    return cleaned
 
 
 def resize(img, width=ASCII_WIDTH):
@@ -36,6 +42,7 @@ output_dir.mkdir(exist_ok=True)
 
 image = Image.open("profile.png").convert("RGB")
 image = crop_to_subject(image)
+image = remove_flat_background(image)
 image = grayscale(resize(image))
 image = ImageOps.autocontrast(image, cutoff=2)
 image = ImageEnhance.Contrast(image).enhance(1.35)
