@@ -11,30 +11,36 @@
 
 <img src="./output/hd-about.svg" width="620" alt="about" />
 
-> Software engineering student focused on Python, machine learning, and data structures.<br>
-> Learning by building practical projects and solving problems consistently.
+> 📚 Bachelor of Science in Software Engineering | FAST University Chiniot Faislabad Campus<br>
+> 💻 Full-stack Developer | Python Enthusiast | Data Structures & Algorithms<br>
+> 🎯 Passionate about building practical projects and solving complex problems<br>
+> 📍 Pakistan
 
 <img src="./output/hd-stack.svg" width="620" alt="stack" />
 
-<samp>python &nbsp; machine learning &nbsp; data structures &nbsp; algorithms &nbsp; git &nbsp; github</samp>
+<samp>Python &nbsp; TypeScript &nbsp; JavaScript &nbsp; C++ &nbsp; React &nbsp; Web Development</samp>
 
 <img src="./output/hd-projects.svg" width="620" alt="projects" />
 
-**Learning projects** &nbsp;·&nbsp; <samp>python</samp><br>
-Small programs and experiments that turn concepts into working software.
+**Core Projects** &nbsp;·&nbsp; <samp>C++, Python, Data Structures</samp><br>
+[E-Commerce System](https://github.com/msaimnaveed2005/E-COMMERCE-MANAGEMENT-SYSTEM) | [ATC Simulation](https://github.com/msaimnaveed2005/SkyNet-ATC) | [Snake Game 3D](https://github.com/msaimnaveed2005/SnakeGame3D)<br>
+Real-world applications demonstrating OOP, file I/O, and systems design.
 
-**Machine learning** &nbsp;·&nbsp; <samp>python, data</samp><br>
-Exploring the foundations of data preparation, models, and evaluation.
+**Web Development** &nbsp;·&nbsp; <samp>React, TypeScript, Tailwind CSS</samp><br>
+[Cinematic Website](https://github.com/msaimnaveed2005/softsol-cinematic-website) | [Backend Course](https://github.com/msaimnaveed2005/Backend-Full-Course-Practice) | [Tailwind Master](https://github.com/msaimnaveed2005/Master-TailwindCSS)<br>
+Building modern, responsive web applications with latest frameworks and styling.
 
-**Problem solving** &nbsp;·&nbsp; <samp>algorithms, dsa</samp><br>
-Practicing data structures and algorithms to build stronger engineering fundamentals.
+**Algorithms & DSA** &nbsp;·&nbsp; <samp>C++, Problem Solving</samp><br>
+[Data Structures (Sem 3)](https://github.com/msaimnaveed2005/Data-Structure-SEMESTER-3-2025) | [OOP Projects](https://github.com/msaimnaveed2005/OOP-FALL-2024) | [Discrete Structures](https://github.com/msaimnaveed2005/DiscreteFinalProject)<br>
+University coursework covering fundamental computer science concepts.
 
 <img src="./output/hd-focus.svg" width="620" alt="current focus" />
 
-- Strengthening Python fundamentals and writing maintainable code
-- Practicing DSA and improving algorithmic thinking
-- Learning machine learning through hands-on experiments
-- Building a portfolio of useful, well-documented projects
+- 🔧 Mastering full-stack web development with React & TypeScript
+- 📊 Building data structures and algorithmic foundations
+- 🏗️ Creating production-ready applications with clean architecture
+- 🚀 Contributing to open-source and collaborating with the developer community
+- 📚 Continuously learning modern technologies and best practices
 
 <img src="./output/hd-stats.svg" width="620" alt="stats" />
 
