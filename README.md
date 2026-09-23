@@ -9,11 +9,15 @@
 
 </div>
 
+<div align="center">
+<samp>THE CHRONICLE OF A SOFTWARE CRAFTSMAN</samp>
+</div>
+
 <img src="./output/hd-about.svg" width="620" alt="about" />
 
 > Bachelor of Science in Software Engineering at FAST University, Chiniot-Faisalabad Campus<br>
 > Software developer focused on Python, C++, TypeScript, JavaScript, and data structures<br>
-> Building practical applications while developing strong software engineering fundamentals<br>
+> Forging practical applications while developing strong software engineering fundamentals<br>
 > Pakistan
 
 <img src="./output/hd-stack.svg" width="620" alt="stack" />
@@ -22,15 +26,15 @@
 
 <img src="./output/hd-projects.svg" width="620" alt="projects" />
 
-**Core projects** &nbsp;/&nbsp; <samp>C++, Python, data structures</samp><br>
+**The great works** &nbsp;/&nbsp; <samp>C++, Python, data structures</samp><br>
 [E-Commerce System](https://github.com/msaimnaveed2005/E-COMMERCE-MANAGEMENT-SYSTEM) | [ATC Simulation](https://github.com/msaimnaveed2005/SkyNet-ATC) | [Snake Game 3D](https://github.com/msaimnaveed2005/SnakeGame3D)<br>
 Applications demonstrating object-oriented design, file I/O, simulation, and game programming.
 
-**Web development** &nbsp;/&nbsp; <samp>React, TypeScript, JavaScript, Tailwind CSS</samp><br>
+**The web guild** &nbsp;/&nbsp; <samp>React, TypeScript, JavaScript, Tailwind CSS</samp><br>
 [Cinematic Website](https://github.com/msaimnaveed2005/softsol-cinematic-website) | [Backend Course](https://github.com/msaimnaveed2005/Backend-Full-Course-Practice) | [Tailwind Master](https://github.com/msaimnaveed2005/Master-TailwindCSS)<br>
 Frontend and backend practice focused on responsive interfaces, reusable components, and modern tooling.
 
-**Algorithms and data structures** &nbsp;/&nbsp; <samp>C++, problem solving</samp><br>
+**The scholar's craft** &nbsp;/&nbsp; <samp>C++, problem solving</samp><br>
 [Data Structures (Sem 3)](https://github.com/msaimnaveed2005/Data-Structure-SEMESTER-3-2025) | [OOP Projects](https://github.com/msaimnaveed2005/OOP-FALL-2024) | [Discrete Structures](https://github.com/msaimnaveed2005/DiscreteFinalProject)<br>
 Coursework covering algorithms, object-oriented programming, discrete mathematics, and software design.
 
@@ -56,12 +60,12 @@ Coursework covering algorithms, object-oriented programming, discrete mathematic
 
 <img src="./output/hd-about-this-page.svg" width="620" alt="about this page" />
 
-The portrait and profile graphics are generated inside this repository. A scheduled
+The portrait and profile graphics are forged inside this repository. A scheduled
 GitHub Action refreshes the contribution graphics using GitHub's GraphQL API and
 commits only changed files, so the profile does not depend on third-party widgets.
 The stats include contribution history, streaks, public-repository languages, and
 a one-character-per-day activity map.
 
 <div align="center">
-<sub>Learning, building, and improving one project at a time.</sub>
+<sub>Learning, building, and improving one craft at a time.</sub>
 </div>
