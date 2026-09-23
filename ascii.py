@@ -9,10 +9,13 @@ RAMP = " .`:-=+*cs#%@"
 COLS = 90
 ROW_RATIO = 0.48
 CURVE = 1.7
+# Tight portrait crop around the hair, face, neck, and upper shoulders.
+FACE_CROP = (100, 160, 840, 1240)
 
 
 def prepare(path):
     source = Image.open(path).convert("RGBA")
+    source = source.crop(FACE_CROP)
     cutout = remove(source)
     alpha = np.array(cutout.getchannel("A"))
 
