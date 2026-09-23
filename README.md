@@ -4,43 +4,43 @@
 
 <img src="./output/stats.svg" width="620" alt="Contributions in the last year" />
 
-[github](https://github.com/msaimnaveed2005) &nbsp;·&nbsp;
+[github](https://github.com/msaimnaveed2005) &nbsp;/&nbsp;
 [repositories](https://github.com/msaimnaveed2005?tab=repositories)
 
 </div>
 
 <img src="./output/hd-about.svg" width="620" alt="about" />
 
-> 📚 Bachelor of Science in Software Engineering | FAST University Chiniot Faislabad Campus<br>
-> 💻 Full-stack Developer | Python Enthusiast | Data Structures & Algorithms<br>
-> 🎯 Passionate about building practical projects and solving complex problems<br>
-> 📍 Pakistan
+> Bachelor of Science in Software Engineering at FAST University, Chiniot-Faisalabad Campus<br>
+> Software developer focused on Python, C++, TypeScript, JavaScript, and data structures<br>
+> Building practical applications while developing strong software engineering fundamentals<br>
+> Pakistan
 
 <img src="./output/hd-stack.svg" width="620" alt="stack" />
 
-<samp>Python &nbsp; TypeScript &nbsp; JavaScript &nbsp; C++ &nbsp; React &nbsp; Web Development</samp>
+<samp>Python &nbsp; C++ &nbsp; TypeScript &nbsp; JavaScript &nbsp; React &nbsp; Tailwind CSS &nbsp; Git</samp>
 
 <img src="./output/hd-projects.svg" width="620" alt="projects" />
 
-**Core Projects** &nbsp;·&nbsp; <samp>C++, Python, Data Structures</samp><br>
+**Core projects** &nbsp;/&nbsp; <samp>C++, Python, data structures</samp><br>
 [E-Commerce System](https://github.com/msaimnaveed2005/E-COMMERCE-MANAGEMENT-SYSTEM) | [ATC Simulation](https://github.com/msaimnaveed2005/SkyNet-ATC) | [Snake Game 3D](https://github.com/msaimnaveed2005/SnakeGame3D)<br>
-Real-world applications demonstrating OOP, file I/O, and systems design.
+Applications demonstrating object-oriented design, file I/O, simulation, and game programming.
 
-**Web Development** &nbsp;·&nbsp; <samp>React, TypeScript, Tailwind CSS</samp><br>
+**Web development** &nbsp;/&nbsp; <samp>React, TypeScript, JavaScript, Tailwind CSS</samp><br>
 [Cinematic Website](https://github.com/msaimnaveed2005/softsol-cinematic-website) | [Backend Course](https://github.com/msaimnaveed2005/Backend-Full-Course-Practice) | [Tailwind Master](https://github.com/msaimnaveed2005/Master-TailwindCSS)<br>
-Building modern, responsive web applications with latest frameworks and styling.
+Frontend and backend practice focused on responsive interfaces, reusable components, and modern tooling.
 
-**Algorithms & DSA** &nbsp;·&nbsp; <samp>C++, Problem Solving</samp><br>
+**Algorithms and data structures** &nbsp;/&nbsp; <samp>C++, problem solving</samp><br>
 [Data Structures (Sem 3)](https://github.com/msaimnaveed2005/Data-Structure-SEMESTER-3-2025) | [OOP Projects](https://github.com/msaimnaveed2005/OOP-FALL-2024) | [Discrete Structures](https://github.com/msaimnaveed2005/DiscreteFinalProject)<br>
-University coursework covering fundamental computer science concepts.
+Coursework covering algorithms, object-oriented programming, discrete mathematics, and software design.
 
 <img src="./output/hd-focus.svg" width="620" alt="current focus" />
 
-- 🔧 Mastering full-stack web development with React & TypeScript
-- 📊 Building data structures and algorithmic foundations
-- 🏗️ Creating production-ready applications with clean architecture
-- 🚀 Contributing to open-source and collaborating with the developer community
-- 📚 Continuously learning modern technologies and best practices
+- Improving full-stack development with React, TypeScript, and backend fundamentals
+- Strengthening data structures, algorithms, and problem-solving skills
+- Designing maintainable applications with clear architecture
+- Building and documenting projects that demonstrate practical engineering ability
+- Learning modern development tools and software engineering practices
 
 <img src="./output/hd-stats.svg" width="620" alt="stats" />
 
