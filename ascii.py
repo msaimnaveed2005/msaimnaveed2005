@@ -6,8 +6,8 @@ from PIL import Image
 from rembg import remove
 
 RAMP = " .`:-=+*cs#%@"
-COLS = 90
-ROW_RATIO = 0.48
+COLS = 76
+ROW_RATIO = 0.75
 CURVE = 1.7
 
 
@@ -15,6 +15,17 @@ def prepare(path):
     source = Image.open(path).convert("RGBA")
     cutout = remove(source)
     alpha = np.array(cutout.getchannel("A"))
+
+    # Remove the empty margins left by the source photo before resampling.
+    ys, xs = np.where(alpha > 20)
+    if len(xs):
+        pad = 8
+        left = max(0, int(xs.min()) - pad)
+        top = max(0, int(ys.min()) - pad)
+        right = min(cutout.width, int(xs.max()) + pad + 1)
+        bottom = min(cutout.height, int(ys.max()) + pad + 1)
+        cutout = cutout.crop((left, top, right, bottom))
+        alpha = np.array(cutout.getchannel("A"))
 
     white = Image.new("RGBA", cutout.size, (255, 255, 255, 255))
     gray = np.array(Image.alpha_composite(white, cutout).convert("L"))
