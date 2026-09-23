@@ -50,7 +50,7 @@ Coursework covering algorithms, object-oriented programming, discrete mathematic
 
 <img src="./output/langs.svg" width="620" alt="Top languages by bytes and repository count" />
 
-<img src="./output/year.svg" width="620" alt="Contribution activity over the last year" />
+<img src="./output/year.svg?v=2" width="620" alt="Contribution activity over the last year" />
 
 </div>
 
