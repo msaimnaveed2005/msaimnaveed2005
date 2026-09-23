@@ -9,7 +9,6 @@
 
 </div>
 
-<<<<<<< HEAD
 <img src="./output/hd-about.svg" width="620" alt="about" />
 
 > Software engineering student focused on Python, machine learning, and data structures.<br>
@@ -46,14 +45,3 @@ commits only changed files, so the profile does not depend on third-party widget
 <div align="center">
 <sub>Learning, building, and improving one project at a time.</sub>
 </div>
-=======
-![ASCII portrait](output/ascii.svg)
-
-## GitHub Stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=msaimnaveed2005&show_icons=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=msaimnaveed2005)
-
-<img src="https://raw.githubusercontent.com/msaimnaveed2005/msaimnaveed2005/main/output/ascii.svg" width="500" alt="ASCII portrait">
->>>>>>> 8c78ff379f1c005dabf988f7a3abf01cba308f34
