@@ -11,6 +11,22 @@ def crop_to_subject(img):
     return img.crop((margin, 0, width - margin, height))
 
 
+def remove_flat_background(img):
+    pixels = img.load()
+    background = (158, 158, 158)
+    for y in range(img.height):
+        for x in range(img.width):
+            red, green, blue = pixels[x, y]
+            distance = max(
+                abs(red - background[0]),
+                abs(green - background[1]),
+                abs(blue - background[2]),
+            )
+            if distance <= 10:
+                pixels[x, y] = (255, 255, 255)
+    return img
+
+
 def resize(img, width=ASCII_WIDTH):
     w, h = img.size
     ratio = h / w
@@ -36,6 +52,7 @@ output_dir.mkdir(exist_ok=True)
 
 image = Image.open("profile.png").convert("RGB")
 image = crop_to_subject(image)
+image = remove_flat_background(image)
 image = grayscale(resize(image))
 image = ImageOps.autocontrast(image, cutoff=2)
 image = ImageEnhance.Contrast(image).enhance(1.35)

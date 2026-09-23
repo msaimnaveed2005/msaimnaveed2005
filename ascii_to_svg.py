@@ -21,11 +21,11 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{heigh
     .portrait {{
       font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
       font-size: {font_size}px;
-      fill: #424a53;
+      fill: #24292f;
       letter-spacing: 0;
     }}
     .cursor {{
-      fill: #424a53;
+      fill: #24292f;
     }}
     @media (prefers-color-scheme: dark) {{
       .portrait, .cursor {{
