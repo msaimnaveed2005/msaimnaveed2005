@@ -1,37 +1,47 @@
-# Muhammad Saim Naveed
-
-> Software Engineering Student • Python • Machine Learning • Data Structures & Algorithms
-
-<blockquote>
-  I’m building a strong foundation in software engineering by learning problem solving, Python, ML workflows, and real-world project development.
-</blockquote>
-
 <div align="center">
-  <img src="output/ascii.svg" alt="ASCII portrait of Muhammad Saim Naveed" width="460" />
+
+<img src="./output/ascii.svg" width="460" alt="Muhammad Saim Naveed" />
+
+<img src="./output/stats.svg" width="620" alt="Contributions in the last year" />
+
+[github](https://github.com/msaimnaveed2005) &nbsp;·&nbsp;
+[repositories](https://github.com/msaimnaveed2005?tab=repositories)
+
 </div>
 
-## About Me
+<img src="./output/hd-about.svg" width="620" alt="about" />
 
-- Learning Python and writing efficient, readable code
-- Exploring Machine Learning concepts and practical workflows
-- Practicing Data Structures and Algorithms to strengthen problem solving
-- Building small projects that turn theory into working software
+> Software engineering student focused on Python, machine learning, and data structures.<br>
+> Learning by building practical projects and solving problems consistently.
 
-## Current Focus
+<img src="./output/hd-stack.svg" width="620" alt="stack" />
 
-<samp>Python</samp> <samp>Machine Learning</samp> <samp>DSA</samp> <samp>Projects</samp>
+<samp>python &nbsp; machine learning &nbsp; data structures &nbsp; algorithms &nbsp; git &nbsp; github</samp>
 
-## What I’m Working On
+<img src="./output/hd-projects.svg" width="620" alt="projects" />
 
-- Strengthening core programming fundamentals
-- Applying ML ideas to real datasets and problem solving
-- Improving my portfolio with practical, useful builds
-- Learning by building, testing, and refining projects
+**Learning projects** &nbsp;·&nbsp; <samp>python</samp><br>
+Small programs and experiments that turn concepts into working software.
 
-## Profile Notes
+**Machine learning** &nbsp;·&nbsp; <samp>python, data</samp><br>
+Exploring the foundations of data preparation, models, and evaluation.
 
-This profile is intentionally lightweight and self-contained: the portrait is generated from a local image and rendered as SVG, making it easy to maintain without relying on external widgets.
+**Problem solving** &nbsp;·&nbsp; <samp>algorithms, dsa</samp><br>
+Practicing data structures and algorithms to build stronger engineering fundamentals.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-Learning%20and%20Building-9cf?style=for-the-badge" alt="status badge" />
-</p>
+<img src="./output/hd-focus.svg" width="620" alt="current focus" />
+
+- Strengthening Python fundamentals and writing maintainable code
+- Practicing DSA and improving algorithmic thinking
+- Learning machine learning through hands-on experiments
+- Building a portfolio of useful, well-documented projects
+
+<img src="./output/hd-about-this-page.svg" width="620" alt="about this page" />
+
+The portrait and profile graphics are generated inside this repository. A scheduled
+GitHub Action refreshes the contribution graphics using GitHub's GraphQL API and
+commits only changed files, so the profile does not depend on third-party widgets.
+
+<div align="center">
+<sub>Learning, building, and improving one project at a time.</sub>
+</div>

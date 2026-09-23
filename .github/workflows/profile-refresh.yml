@@ -1,41 +1,52 @@
-name: profile refresh
+name: refresh profile graphics
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "17 5 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: refresh-profile
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install Pillow
-        run: pip install pillow
+      - name: Install portrait dependency
+        run: python -m pip install pillow
 
       - name: Regenerate portrait
         run: |
           python ascii.py
           python ascii_to_svg.py
 
+      - name: Regenerate contribution graphics
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_LOGIN: ${{ github.repository_owner }}
+        run: python scripts/generate_profile_stats.py
+
       - name: Commit updates if needed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/ascii.txt output/ascii.svg
+          git add output
           if git diff --cached --quiet; then
             echo "No portrait changes to commit."
             exit 0
           fi
-          git commit -m "profile: refresh portrait"
+          git commit -m "profile: refresh generated graphics"
           git push
