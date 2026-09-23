@@ -1,32 +1,31 @@
-with open("output/ascii.txt") as f:
-    lines = f.readlines()
+from pathlib import Path
 
-svg = """
-<svg xmlns="http://www.w3.org/2000/svg"
-width="1000"
-height="800">
 
-<style>
-text{
-font-family:monospace;
-font-size:10px;
-fill:white;
-}
-</style>
+output_dir = Path("output")
+text_path = output_dir / "ascii.txt"
+svg_path = output_dir / "ascii.svg"
 
-<rect width="100%" height="100%" fill="black"/>
+with text_path.open("r", encoding="utf-8") as f:
+    lines = [line.rstrip("\n") for line in f]
 
-"""
+svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620">
+  <style>
+    text {{
+      font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 10px;
+      fill: #f5f5f5;
+      letter-spacing: 0.25px;
+    }}
+  </style>
+  <rect width="100%" height="100%" fill="#0b0d12"/>
+'''
 
-y = 20
+for i, line in enumerate(lines):
+    svg += f'  <text x="18" y="{22 + i * 11}">{line}</text>\n'
 
-for line in lines:
-    svg += f'<text x="10" y="{y}">{line}</text>'
-    y += 10
+svg += "</svg>\n"
 
-svg += "</svg>"
-
-with open("output/ascii.svg","w") as f:
+with svg_path.open("w", encoding="utf-8") as f:
     f.write(svg)
 
-print("SVG created")
+print(f"SVG created at {svg_path}")
