@@ -11,10 +11,12 @@ Software Engineering Student
 
 ## ASCII Portrait
 
-![portrait](output/ascii.svg
+![ASCII portrait](output/ascii.svg)
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=msaimnaves=true
+## GitHub Stats
 
-![Top Languages](https://github-readme-statsop-langs/?username=msaimnaveed2005
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=msaimnaveed2005&show_icons=true)
 
-<img src="https://raw.githubusercontent.com/msaimnaveed2005/msaimnaveed2005/main/output/ascii.svg" width="500
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=msaimnaveed2005)
+
+<img src="https://raw.githubusercontent.com/msaimnaveed2005/msaimnaveed2005/main/output/ascii.svg" width="500" alt="ASCII portrait">
