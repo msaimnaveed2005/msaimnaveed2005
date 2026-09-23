@@ -37,7 +37,7 @@ def to_ascii(image):
     for row in range(rows):
         result.append("".join(
             RAMP[min(len(RAMP) - 1,
-                     int((1 - pixels[row * COLS + col] / 255.0) * len(RAMP)))]
+                     int((pixels[row * COLS + col] / 255.0) * len(RAMP)))]
             for col in range(COLS)
         ).rstrip())
     while result and not result[0].strip():
