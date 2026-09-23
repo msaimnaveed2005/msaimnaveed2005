@@ -9,11 +9,11 @@ svg_path = output_dir / "ascii.svg"
 with text_path.open("r", encoding="utf-8") as f:
     lines = [line.rstrip("\n") for line in f]
 
-line_height = 11
+line_height = 15
 padding = 18
-char_width = 6.25
-font_size = 10
-width = 900
+char_width = 7.74
+font_size = 12.9
+width = 740
 height = max(1, len(lines) * line_height + padding * 2)
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
@@ -21,15 +21,15 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{heigh
     .portrait {{
       font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
       font-size: {font_size}px;
-      fill: #57606a;
-      letter-spacing: 0.25px;
+      fill: #424a53;
+      letter-spacing: 0;
     }}
     .cursor {{
-      fill: #57606a;
+      fill: #424a53;
     }}
     @media (prefers-color-scheme: dark) {{
       .portrait, .cursor {{
-        fill: #c9d1d9;
+        fill: #f0f6fc;
       }}
     }}
   </style>

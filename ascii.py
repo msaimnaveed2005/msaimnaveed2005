@@ -1,14 +1,21 @@
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageEnhance, ImageOps
 
-ASCII_CHARS = "@%#*+=-:. "
+ASCII_CHARS = "@%#*+=-:.` "
+ASCII_WIDTH = 90
 
 
-def resize(img, width=110):
+def crop_to_subject(img):
+    width, height = img.size
+    margin = int(width * 0.08)
+    return img.crop((margin, 0, width - margin, height))
+
+
+def resize(img, width=ASCII_WIDTH):
     w, h = img.size
     ratio = h / w
     height = max(1, int(width * ratio * 0.55))
-    return img.resize((width, height))
+    return img.resize((width, height), Image.Resampling.LANCZOS)
 
 
 def grayscale(img):
@@ -28,13 +35,16 @@ output_dir = Path("output")
 output_dir.mkdir(exist_ok=True)
 
 image = Image.open("profile.png").convert("RGB")
-image = resize(image)
-image = grayscale(image)
+image = crop_to_subject(image)
+image = grayscale(resize(image))
+image = ImageOps.autocontrast(image, cutoff=2)
+image = ImageEnhance.Contrast(image).enhance(1.35)
+image = image.point(lambda value: int(255 * (value / 255) ** 1.35))
 
 ascii_str = pixels_to_ascii(image)
 width = image.width
 ascii_img = "\n".join(
-    ascii_str[i:i + width]
+    ascii_str[i:i + width].rstrip()
     for i in range(0, len(ascii_str), width)
 )
 
