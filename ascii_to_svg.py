@@ -9,10 +9,10 @@ svg_path = output_dir / "ascii.svg"
 with text_path.open("r", encoding="utf-8") as f:
     lines = [line.rstrip("\n") for line in f]
 
-line_height = 18
-padding = 24
-char_width = 9.25
-font_size = 15.4
+line_height = 11
+padding = 18
+char_width = 6.25
+font_size = 10
 width = 900
 height = max(1, len(lines) * line_height + padding * 2)
 
