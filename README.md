@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./output/ascii.svg" width="620" alt="Animated ASCII portrait of Muhammad Saim Naveed" />
+<img src="./output/ascii.svg" width="900" alt="Animated ASCII portrait of Muhammad Saim Naveed" />
 
 <img src="./output/stats.svg" width="620" alt="Contributions in the last year" />
 
