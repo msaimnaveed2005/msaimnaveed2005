@@ -10,7 +10,7 @@ FONT_SIZE = 12.9
 CHAR_W = 7.74
 LINE_H = 15
 PAD = 14
-WIDTH = int(76 * CHAR_W + PAD * 2)
+WIDTH = int(90 * CHAR_W + PAD * 2)
 HEIGHT = len(lines) * LINE_H + PAD * 2
 font_b64 = base64.b64encode(font_path.read_bytes()).decode("ascii")
 
