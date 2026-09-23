@@ -55,7 +55,7 @@ query($login: String!, $from: DateTime!, $to: DateTime!) {
 }
 """
 
-# The portrait's ink is the data ink, so every graphic reads as one material.
+# Shared neutral palette for the profile graphics.
 LIGHT = dict(data="#6e7681", emph="#424a53", dim="#8c959f",
              rule="#d8dee4", surface="#ffffff")
 DARK = dict(data="#c9d1d9", emph="#f0f6fc", dim="#8b949e",
@@ -387,7 +387,10 @@ def draw_year(s):
                 return i
         return 4
 
-    p = [head(WIDTH, H)]
+    p = [head(WIDTH, H, font=font_text())]
+    p[0] = p[0].replace("</style>",
+        ".v0{fill:#30363d}.v1{fill:#9be9a8}.v2{fill:#40c463}"
+        ".v3{fill:#30a14e}.v4{fill:#216e39}</style>", 1)
     p.append(f'<g opacity="0">{fade(0.10)}'
              + label(pad_l, 16, "THE YEAR", 9, "m-f",
                      extra=' letter-spacing="1.3"')
@@ -404,12 +407,12 @@ def draw_year(s):
              + label(lx, 32, "more", 9, "m-f", "end") + '</g>')
 
     for r in range(7):
-        chars = []
+        cells = []
         for w in weeks:
             day = next((d for d in w if d.get("weekday") == r), None)
             v = day["contributionCount"] if day else 0
-            chars.append(RAMP[level(v)] * COLW)
-        line = "".join(chars).rstrip()
+            cells.append(level(v))
+        line = "".join(RAMP[v] * COLW for v in cells).rstrip()
         if not line:
             continue
         y = pad_t + r * LH
@@ -420,10 +423,19 @@ def draw_year(s):
                  f'height="{LH}" width="0"><animate attributeName="width" '
                  f'from="0" to="{w_px:.1f}" begin="{delay:.2f}s" dur="0.40s" '
                  f'fill="freeze"/></rect></clipPath>')
-        safe = line.replace("&", "&amp;").replace("<", "&lt;")
+        spans = []
+        start = 0
+        while start < len(cells):
+            value = cells[start]
+            end = start + 1
+            while end < len(cells) and cells[end] == value:
+                end += 1
+            text = (RAMP[value] * COLW * (end - start)).replace("&", "&amp;")
+            spans.append(f'<tspan class="v{value}">{text}</tspan>')
+            start = end
         p.append(f'<g clip-path="url(#{cid})"><text xml:space="preserve" '
                  f'x="{pad_l}" y="{y + FS - 0.6:.1f}" class="d-f" '
-                 f'font-size="{FS}">{safe}</text></g>')
+                 f'font-size="{FS}">{"".join(spans)}</text></g>')
 
     for r, lab in ((1, "mon"), (3, "wed"), (5, "fri")):
         p.append(label(pad_l - 7, pad_t + r * LH + FS - 0.6, lab, 9, "m-f",
