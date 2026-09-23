@@ -56,10 +56,10 @@ query($login: String!, $from: DateTime!, $to: DateTime!) {
 """
 
 # Shared neutral palette for the profile graphics.
-LIGHT = dict(data="#7a5c32", emph="#49351f", dim="#9a7b4f",
-             rule="#c7a76b", surface="#fbf3e3")
-DARK = dict(data="#d2b06a", emph="#f0d58c", dim="#a88f68",
-            rule="#5d4930", surface="#171412")
+LIGHT = dict(data="#76501f", emph="#432b12", dim="#98713b",
+             rule="#c69a4a", surface="#fff8e8")
+DARK = dict(data="#e0b45c", emph="#ffe18a", dim="#b99a64",
+            rule="#6b4a20", surface="#17120d")
 # JBMono is the inlined subset below; the rest is a fallback for the unlikely
 # case a renderer ignores the embedded face.
 MONO = ("JBMono,ui-monospace,SFMono-Regular,Menlo,Consolas,"
@@ -389,8 +389,8 @@ def draw_year(s):
 
     p = [head(WIDTH, H, font=font_text())]
     p[0] = p[0].replace("</style>",
-        ".v0{fill:#2a2520}.v1{fill:#76552b}.v2{fill:#9b6b30}"
-        ".v3{fill:#c18f3c}.v4{fill:#e0b04b}</style>", 1)
+        ".v0{fill:#29231c}.v1{fill:#6b4520}.v2{fill:#9a641f}"
+        ".v3{fill:#c38a2b}.v4{fill:#f0c15a}</style>", 1)
     p.append(f'<g opacity="0">{fade(0.10)}'
              + label(pad_l, 16, "THE YEAR", 9, "m-f",
                      extra=' letter-spacing="1.3"')
